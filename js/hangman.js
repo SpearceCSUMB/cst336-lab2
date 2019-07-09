@@ -24,6 +24,9 @@ $(".letter").click(function(){
 $("#letterBtn").click(function(){
   var boxVal = $("#letterBox").val();
   isGuess(boxVal);
+  if (remainingGuesses == 0){
+    endGame(false);
+  }
   console.log("You pressed the button and it had the value: " + boxVal);
 })
 
