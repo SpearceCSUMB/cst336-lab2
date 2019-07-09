@@ -3,6 +3,8 @@
 }
 #word, #letters {
   padding: 20px 0px;
+  color: red;
+  border-color: green;
 }
 #man {
   margin: 20px auto;
@@ -16,9 +18,18 @@
   font-size: 1.8em;
 }
 .hint {
-  font-size: 0.6em !important;
+  font-size: 10pt !important;
+  color: blue;
 }
 .btn {
   padding: 7px 7px !important;
   margin: 0px 2px;
+  color: red;
+  background-color: blue;
+  border-color: black;
+}
+.btn-success {
+  color: red;
+  background-color: blue;
+  border-color: black;
 }

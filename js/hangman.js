@@ -70,7 +70,6 @@ function checkLetter(letter) {
   
   // Put all the positions the letter exsists in an an array
   for (var i = 0; i < selectedWord.length; i++) {
-    //console.log(selectedWord)
     if (letter == selectedWord[i]) {
       positions.push(i);
     }
@@ -93,7 +92,6 @@ function updateWord(positions, letter) {
   for (var pos of positions) {
     board[pos] = letter;
   }
-  
   updateBoard(board);
 }
 
@@ -106,7 +104,6 @@ function updateBoard() {
     }
   
   $("#word").append("<br />");
-  //$("#word").append("<span class='hint'>Hint: " + selectedHint + "</span>");
  }
 
 function updateMan() {
@@ -115,7 +112,6 @@ function updateMan() {
 
 function endGame(win) {
   $("#letters").hide();
-  
   if (win) {
     $('#won').show();
   } else {
@@ -131,17 +127,16 @@ function disableButton(btn) {
 function showHint() {
   $("#hint").empty();
   $("#hint").append("<span class='hint'>Hint: " + selectedHint + "</span>");
-  //disableButton
   remainingGuesses -= 1;
   updateMan();
 }
 
 function isGuess(gameWord) {
-  console.log(selectedWord);
   if (gameWord.toUpperCase() == selectedWord) {
     endGame(true);
   } else {
+    remainingGuesses -= 1;
+    updateMan();
     $("#guesses").append("<span class='guess'>You guessed: " + gameWord + "</span><br />");
   }
-  console.log("You pressed the button and it had the value: " + boxVal);
 }
